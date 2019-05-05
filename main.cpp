@@ -11,13 +11,18 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     double a,b,c = 0;
-    cout << "Enter a b c \n";
-    cin >> a >> b >> c;
-    double term1 = -1.0 * b;
-    double term2 = sqrt(pow(b,2) - (4.0 * a * c));
-    double posRoot = (term1 + term2) / (2.0 * a);
-    double negRoot = (term1 - term2) / (2.0 * a);
-    cout << "Roots: " << posRoot << " and " << negRoot << endl;
+    double posRoot = 0;
+    double negRoot = 0;
+    cout << "Welcome to the Quadratic Equation calculator.\nEnter 'q' to quit.\n";
+    cout << "Enter a b c :\n";
+    while (cin >> a >> b >> c && a != 'q') {
+        double term1 = -1.0 * b;
+        double term2 = sqrt(pow(b,2) - (4.0 * a * c));
+        posRoot = (term1 + term2) / (2.0 * a);
+        negRoot = (term1 - term2) / (2.0 * a);
+        cout << "Roots: " << posRoot << " and " << negRoot << endl;
+    }
+    cout << "Bye!" << endl;
     return 0;
 }
 
